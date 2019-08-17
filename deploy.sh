@@ -15,9 +15,8 @@ docker run -d \
 -e SERVICE_8080_NAME=${container_name} \
 -e SERVICE_CHECK_INTERVAL=10s \
 -e SERVICE_CHECK_TIMEOUT=5s \
--e SERVICE_TAGS=urlprefix-/hostnameserver \
+-e SERVICE_TAGS='urlprefix-/${container_name} strip=/${container_name}' \
 ${docker_image} \
 java \
--server \
 -jar \
-/app.jar
+app.jar
