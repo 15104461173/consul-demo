@@ -11,8 +11,8 @@ docker run -d \
 --name=${container_name} \
 --restart=always \
 --net=host \
--e SERVICE_8080_CHECK_HTTP=/healthy \
--e SERVICE_8080_NAME=${container_name} \
+-p 8080:8080 \
+-e SERVICE_CHECK_HTTP=/healthy \
 -e SERVICE_CHECK_INTERVAL=5s \
 -e SERVICE_CHECK_TIMEOUT=2s \
 -e SERVICE_TAGS="urlprefix-/${container_name} strip=/${container_name}" \
