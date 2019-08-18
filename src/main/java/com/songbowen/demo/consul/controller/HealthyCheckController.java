@@ -7,7 +7,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HealthyCheckController {
 
-	@GetMapping(value = "/healthy")
-	public void checkHealthy() throws UnknownHostException {
+	@GetMapping(value = "/healthy", produces = "text/html")
+	public String checkHealthy() throws UnknownHostException {
+		return "OK";
 	}
 }
