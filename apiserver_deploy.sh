@@ -12,11 +12,10 @@ docker run -d \
 --restart=always \
 --net=host \
 -p 8080:8080 \
+-e SERVICE_NAME=${container_name} \
 -e SERVICE_CHECK_HTTP=/healthy \
 -e SERVICE_CHECK_INTERVAL=5s \
 -e SERVICE_CHECK_TIMEOUT=2s \
 -e SERVICE_TAGS="urlprefix-/${container_name} strip=/${container_name}" \
 ${docker_image} \
-java \
--jar \
-app.jar
+java -jar app.jar
